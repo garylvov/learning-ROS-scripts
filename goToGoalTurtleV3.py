@@ -1,7 +1,5 @@
-#This code has two mild bugs:
+#This code has a mild bug:
 #When traveling left horizontally turtle is erratic
-#Turtles are spawned more than once, deleted, and spawned again when they should only be spawned once
-#wait statement on line 28 mostly patches second bug
 import rospy
 import random
 import math
