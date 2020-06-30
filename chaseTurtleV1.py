@@ -100,7 +100,6 @@ def velocity():
             setVelocity.publish(myVel)
         if((-.05 < relativeAngle and relativeAngle < .05)):
             myVel.linear.x = distance * 2
-            myVel.angular.z = 0
             setVelocity.publish(myVel)
         if(distance < .3):
             distance = 100
@@ -111,20 +110,20 @@ def velocity():
         chaseVel.angular.z = chaseAngle * 4
         setChaseVelocity.publish(chaseVel)
         if(chaseDistance < 1):
-            chaseVel.linear.x *= -5
-            chaseVel.angular.z = 5
+            chaseVel.linear.x *= -10
+            chaseVel.angular.z = -chaseAngle
             setChaseVelocity.publish(chaseVel)
         #turtle3
-        chase2Vel.linear.x = chase2Distance / 4
+        chase2Vel.linear.x = chase2Distance / 8
         chase2Vel.angular.z = chase2Angle * 4
         set2ChaseVelocity.publish(chase2Vel)
         if(chase2Distance < 1):
             chase2Vel.linear.x *=-10
-            chase2Vel.angular.z = 5
+            chase2Vel.angular.z = -chase2Angle
             set2ChaseVelocity.publish(chase2Vel)
         if(distanceChase2andTurtle1 < 1):
             chase2Vel.linear.x *=-10
-            chase2Vel.angular.z = 5
+            chase2Vel.angular.z = -chase2Angle
             set2ChaseVelocity.publish(chase2Vel)
 
         rate.sleep()
@@ -138,7 +137,7 @@ if __name__ == '__main__':
         setVelocity = rospy.Publisher('turtle1/cmd_vel', Twist, queue_size = 10)
         setChaseVelocity = rospy.Publisher('chaseTurtle/cmd_vel', Twist, queue_size = 10)
         set2ChaseVelocity = rospy.Publisher('chaseTurtle2/cmd_vel', Twist, queue_size = 10)
-        rate = rospy.Rate(10)
+        rate = rospy.Rate(100)
         createGoalTurtle()
         #turtle1 already exists
         createChaseTurtle()
