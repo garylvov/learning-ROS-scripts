@@ -9,9 +9,9 @@ SELECT RAW FOR PROPER FORMATTING
 1.) Have ROS installed on your computer:
   http://wiki.ros.org/noetic/Installation
 
-2.) Create a catkin file system if you do not already have one, and add a project with dependicies on rospy, std_msgs, tf, and turtlesim.
+2.) Create a catkin file system if you do not already have one, and add a project with dependencies on rospy, std_msgs, tf, and turtlesim.
   
-  Creating a file system:
+  Creating a file system if you do not have one:
   mkdir -p ~/catkin_ws/src
   cd ~/catkwin_ws/src
   catkin_init_workspace
@@ -26,7 +26,7 @@ SELECT RAW FOR PROPER FORMATTING
   
 3.) Switch to the /src/PROJECTNAME file and open up CMakeLists.txt
  
-4.) Append the following :
+4.) Append the following (delete the names of programs that you are not going to install):
 
 catkin_install_python(PROGRAMS
   scripts/goalTurtleCreationTest.py
@@ -45,11 +45,11 @@ catkin_install_python(PROGRAMS
 
 6.) Make the file executable  
   cd ~/catkin_ws/src/learning_ros/scripts
-  chmod +x {INSERT-FILENAME-HERE}
+  chmod +x INSERT-FILENAME-HERE
 7.) In command run the files
   roscore
   rosrun turtlesim turtlesim_node
-  rosrun learing_ros {INSERT-FILENAME-HERE}
+  rosrun learing_ros INSERT-FILENAME-HERE
   
 //////////////////////////////
 /Information on each script /
