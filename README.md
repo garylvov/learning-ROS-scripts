@@ -26,7 +26,7 @@ SELECT RAW FOR PROPER FORMATTING
   
 3.) Switch to the /src/PROJECTNAME file and open up CMakeLists.txt
  
-4.) Append the following (delete the names of programs that you are not going to install):
+4.) Append the following (delete the paths of programs that you are not going to use/install):
 
 catkin_install_python(PROGRAMS
   scripts/goalTurtleCreationTest.py
