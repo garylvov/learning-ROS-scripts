@@ -3,10 +3,12 @@ import random
 import turtlesim.srv
 from std_msgs.msg import String
 
+
 goalTheta = 0.0
 goalX = 0.0
 goalY = 0.0
 
+#creates goal turtle at random coords
 def createGoalTurtle():
     global goalX, goalY, goalTheta
     goalTurtle = rospy.ServiceProxy('spawn', turtlesim.srv.Spawn)
