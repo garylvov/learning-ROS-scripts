@@ -97,7 +97,7 @@ def velocity():
         relativeAngle = (math.atan2(yAxis, xAxis)-myTheta)
         chaseAngle = (math.atan2(yChase, xChase)-chaseTheta)
         chase2Angle = (math.atan2(y2Chase, x2Chase)-chase2Theta)
-        #turtle1 PID control
+        #turtle1 
         if(-.05 > relativeAngle or relativeAngle > .05): # turns to face goalTurtle
             myVel.linear.x = distance / 10
             myVel.angular.z = relativeAngle * 4
@@ -112,7 +112,7 @@ def velocity():
             distance = 100
             removeGoalTurtle()
             createGoalTurtle()
-        #turtle2 PID control
+        #turtle2
         chaseVel.linear.x = chaseDistance / 4
         chaseVel.angular.z = chaseAngle * 4
         setChaseVelocity.publish(chaseVel)
@@ -121,7 +121,7 @@ def velocity():
             chaseVel.linear.x *= -10
             chaseVel.angular.z = -chaseAngle
             setChaseVelocity.publish(chaseVel)
-        #turtle3 PID control
+        #turtle3
         chase2Vel.linear.x = chase2Distance / 8
         chase2Vel.angular.z = chase2Angle * 4
         set2ChaseVelocity.publish(chase2Vel)
